@@ -1,5 +1,5 @@
 <html>
-<style>
+
 	
 <head>
 		<!-- Latest compiled and minified CSS -->
@@ -12,7 +12,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 	
-</style>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,20 +23,21 @@
 		<h6>{{B}}</h6>
 		<h6>{{C}}</h6>
 		<h6>{{D}}</h6>
-		
+		<input type= "text" id = "{{id}}" placeholder = "Enter the correct letter">
 
 </script>
 
 <script>
 	
 var data="";
-	function loadtest(){				
+	function loadJSON(){				
 		$.getJSON("https://quiz-4bc62.firebaseio.com/.json",function(results){
 			data = results;
+			displayData;
 		})
 	} 
 	
-	function test(){
+	function displayData(){
 		var build = "";
 		
 		
@@ -56,12 +56,26 @@ var data="";
 		} 	
 		output.innerHTML = build;	
 	}
+	function grade(){
+		var ansKey="";
+		var answer = "";
+		for(var key in data.quiz1){
+			answer = document.getElementById(key).value;
+			ansKey= data.quiz1[key].Ans;
+			if(answer ==anskey){
+			
+			}
+			else{
+			
+			}
+		}
+	}
 	
 	 
 	
 </script>
 
-<body onload = "loadtest()">
+<body onload = "loadJSON()">
 
 	
 	<div id = "output"></div>
