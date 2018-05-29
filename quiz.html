@@ -1,0 +1,57 @@
+<html>
+<style>
+	
+<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+	
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script type= "text/template" id="Quiz1"></script>
+<script type="text/template" id="template">
+				<div id = "card">
+					<h2> {{question}} </h2>
+					<h3> {{A}} </h3>
+					<h3> {{B}} </h3>
+					<h3> {{C}} </h3>
+					<h3> {{D}} </h3>
+				</div>
+</script>				
+<script>
+	
+var data="";
+	function Quiz(){				
+		$.getJSON("https://quiz-4bc62.firebaseio.com/.json",function(results){
+			data = results;
+			displayData();
+		})
+	}
+	
+	function displayData(){
+		var build = "";
+		var template = document.getElementById("template").innerHTML;
+		var output = document.getElementById("output");
+		for(var key in data.quiz1){
+			build+=  Mustache.render(template, data.quiz1[key]);
+		}
+		output.innerHTML = build;
+	}
+    
+	 
+	
+</script>
+
+	
+	
+</script>
+<body onload="Quiz()">
+	<div id="output"></div>
+	<input 
+</body>
+</html>
