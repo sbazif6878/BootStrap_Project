@@ -21,6 +21,7 @@
 					<h3> {{B}} </h3>
 					<h3> {{C}} </h3>
 					<h3> {{D}} </h3>
+					<input type= "text" id = "{{id}}" placeholder = "Enter the correct letter">
 				</div>
 </script>				
 <script>
@@ -42,6 +43,28 @@ var data="";
 		}
 		output.innerHTML = build;
 	}
+	
+	function grade(){
+		var wrong = 0;
+		var ansKey="";
+		var answer = "";
+		var grade = 100;
+		var output = document.getElementById("output");
+		for(var key in data.quiz1){
+			answer = document.getElementById("key").value;
+			ansKey= data.quiz1[key].Ans;
+			if(answer ==anskey){
+				alert("you got it right!");
+				
+			}
+			else{
+				alert("Wrong!");
+				wrong++;
+			}
+		output.innerHTML = grade/(wrong*100/30)
+		}
+	}
+	
     
 	 
 	
@@ -52,6 +75,5 @@ var data="";
 </script>
 <body onload="Quiz()">
 	<div id="output"></div>
-	<input 
 </body>
 </html>
