@@ -97,7 +97,7 @@ var data="";
 		}
 		build+= "right: "+right + "<br>"
 		build+= "wrong: " + wrong + "<br>"
-		build+= "score:" + score/(wrong*100/31)+ "<br>";
+		build+= "score:" + Math.floor(score/(wrong*100/30))+ "<br>";
 		output.innerHTML = build;
 	}
 	
