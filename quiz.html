@@ -21,7 +21,7 @@
 					<h3> {{B}} </h3>
 					<h3> {{C}} </h3>
 					<h3> {{D}} </h3>
-					<input type= "text" id = "{{id}}" placeholder = "Enter the correct letter">
+					<input type= "text" id = "id" placeholder = "Enter the correct letter">
 				</div>
 </script>				
 
@@ -77,25 +77,28 @@ var data="";
 		var build = "";
 		var wrong = 0;
 		var right = 0;
-		var score = 100;
+		var answer = "";
+		var ansKey = ""
+		var score = 100 ;
+		var index = 0;
 		var output = document.getElementById("output");
-		for(var key in data.quiz1 ){
-			var answer = document.getElementById("id");
-			var ansKey= data.quiz1[key].Ans;
+		for(var key in data.quiz1){
+			answer= document.getElementById("id");
+			ansKey= data.quiz1[key].Ans;
 			
-			if(answer != ansKey){
+			if(answer.value != ansKey){
 				wrong+=1;
-				
+				index++;
 			}
-			else if(answer == ansKey){
+			else if(answer.value == ansKey){
 				right+=1;
+				index++;
 			}
-		
+			build+= "question: " + data.quiz1[key].question + "<br>"
+			build+= index + ":" + ansKey + "<br>";
 		
 		}
-		build+= "right: "+ right + "<br>"
-		build+= "wrong: " + wrong + "<br>"
-		build+= "score:" + Math.floor(score/(wrong*100/30))+ "<br>";
+		build+= "score: " + Math.floor(score-(wrong*100/31)) + "<br>";
 		output.innerHTML = build;
 	}
 	
