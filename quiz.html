@@ -109,11 +109,11 @@ var data="";
 			answer= document.getElementById("choice");
 			ansKey= data.quiz1[key].Ans;
 			
-			if(answer.toUppercase().value != ansKey.toUppercase()){
+			if(answer.value.toUppercase() != ansKey.toUppercase()){
 				wrong+=1;
 				index++;
 			}
-			else if(answer.toUppercase().value == ansKey.toUppercase()){
+			else if(answer.value.toUppercase() == ansKey.toUppercase()){
 				right+=1;
 				index++;
 			}
