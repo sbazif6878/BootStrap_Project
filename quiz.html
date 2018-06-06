@@ -109,11 +109,11 @@ var data="";
 			answer= document.getElementById("choice");
 			ansKey= data.quiz1[key].Ans;
 			
-			if(answer.value != ansKey){
+			if(answer.toUppercaswe().value != ansKey.toUppercaswe()){
 				wrong+=1;
 				index++;
 			}
-			else if(answer.value == ansKey){
+			else if(answer.toUppercaswe().value == ansKey.toUppercaswe()){
 				right+=1;
 				index++;
 			}
