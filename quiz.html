@@ -68,7 +68,7 @@
 					<h3> {{B}} </h3>
 					<h3> {{C}} </h3>
 					<h3> {{D}} </h3>
-					<input type= "text" id = "choice" placeholder = "Enter the correct letter">
+					<input type= "text" id = {{id}} placeholder = "Enter the correct letter">
 				</div>
 </script>				
 <script>
@@ -101,7 +101,7 @@ var data="";
 		var index = 0;
 		var output = document.getElementById("output");
 		for(var key in data.quiz1){
-			answer= document.getElementById("choice");
+			answer= document.getElementById(key);
 			ansKey= data.quiz1[key].Ans;
 			
 			if(answer.value.toUpperCase() != ansKey.toUpperCase()){
