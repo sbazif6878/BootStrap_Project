@@ -100,7 +100,7 @@ var data="";
 		var index = 0;
 		var output = document.getElementById("output");
 		for(var key in data.quiz1){
-			answer= document.getElementById(key);
+			answer= document.getElementById(key).value;
 			ansKey= data.quiz1[key].Ans;
 			
 			if(answer != ansKey){
