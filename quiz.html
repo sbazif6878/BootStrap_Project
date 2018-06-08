@@ -18,8 +18,7 @@
 
 			50%  {background-color:orange; }
 
-			75%  {background-color:green; }
-
+			75%  {background-color:green; 
 			100% {background-color:yellow; }
 
 		}
@@ -68,7 +67,7 @@
 					<h3> {{B}} </h3>
 					<h3> {{C}} </h3>
 					<h3> {{D}} </h3>
-					<input type= "text" id = {{id}} placeholder = "Enter the correct letter">
+					<input type= "text" id = {{ID}} placeholder = "Enter the correct letter">
 				</div>
 </script>				
 <script>
@@ -104,11 +103,11 @@ var data="";
 			answer= document.getElementById(key);
 			ansKey= data.quiz1[key].Ans;
 			
-			if(answer != ansKey){
+			if(answer.value.toUpperCase() != ansKey.toUpperCase){
 				wrong+=1;
 				index++;
 			}
-			else if(answer == ansKey){
+			else if(answer.value.toUpperCase() == ansKey.toUpperCase()){
 				right+=1;
 				index++;
 			}
