@@ -103,16 +103,18 @@ var data="";
 			answer= document.getElementById(key).value;
 			ansKey= data.quiz1[key].Ans;
 			
-			if(answer != ansKey){
+			if(answer.toUpperCase() != ansKey){
 				wrong+=1;
 				index++;
 			}
-			else if(answer == ansKey){
+			else if(answer.toUpperCase() == ansKey){
 				right+=1;
 				index++;
 			}
 			build+= "question: " + data.quiz1[key].question + "<br>"
 			build+= index + ":" + ansKey + "<br>";
+			build+= "right:" + right + "<br>";
+			build+= "wrong:" + wrong + "<br>";
 		
 		}
 		build+= "score: " + Math.floor((right/31)*100) + "<br>";
