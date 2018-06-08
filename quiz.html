@@ -113,10 +113,11 @@ var data="";
 			}
 			build+= "question: " + data.quiz1[key].question + "<br>"
 			build+= index + ":" + ansKey + "<br>";
-			build+= "right:" + right + "<br>";
-			build+= "wrong:" + wrong + "<br>";
+			build+= "Your Answer:" + answer + "<br>";
 		
 		}
+		build+= "right:" + right + "<br>";
+		build+= "wrong:" + wrong + "<br>";
 		build+= "score: " + Math.floor((right/31)*100) + "<br>";
 		output.innerHTML = build;
 	}
