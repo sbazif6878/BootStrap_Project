@@ -103,11 +103,11 @@ var data="";
 			answer= document.getElementById(key);
 			ansKey= data.quiz1[key].Ans;
 			
-			if(answer.value.toUpperCase() != ansKey.toUpperCase){
+			if(answer.toUpperCase() != ansKey.toUpperCase){
 				wrong+=1;
 				index++;
 			}
-			else if(answer.value.toUpperCase() == ansKey.toUpperCase()){
+			else if(answer.toUpperCase() == ansKey.toUpperCase()){
 				right+=1;
 				index++;
 			}
